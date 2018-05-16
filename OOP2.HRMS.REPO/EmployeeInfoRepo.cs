@@ -104,7 +104,8 @@ namespace OOP2.HRMS.REPO
                 {
                     var userAccount = new UserAccount();
                     userAccount.UserID = objToSave.EmpID;
-                    userAccount.Password = new Random().Next(1000, 9999).ToString();
+                    //userAccount.Password = new Random().Next(1000, 9999).ToString();
+                    userAccount.Password = employeeInfo.UserAccount.Password;
                     userAccount.UserType = employeeInfo.UserAccount.UserType;
 
                     context.UserAccounts.Add(userAccount);
