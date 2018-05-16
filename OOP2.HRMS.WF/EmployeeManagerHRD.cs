@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -265,6 +266,30 @@ namespace OOP2.HRMS.WF
 
             if (NewData)
             {
+                try
+                {
+                    MailMessage mail = new MailMessage("khalid.bd13@gmail.com", txtBoxEmailEMHRD.Text);
+                    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                    //mail.From = new MailAddress("khalidibnehasan@gmail.com");
+                    //mail.To.Add(new MailAddress("kh.coderbd@gmail.com"));
+                    mail.Subject = "Your Employee Account Details";
+                    mail.Body = "Your Username is: "+ result.Data.EmpID + " and Password is: "+ result.Data.UserAccount.Password;
+
+                    SmtpServer.Port = 587;
+                    SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    SmtpServer.UseDefaultCredentials = false;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("khalid.bd13@gmail.com", "h1a2s3a4n5");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MetroMessageBox.Show(this, "Account Credentials Sent To Employee\'s Email.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
                 CurrentData.Add(result.Data);
                 MetroFramework.MetroMessageBox.Show(this, result.Message);
             }
@@ -306,6 +331,8 @@ namespace OOP2.HRMS.WF
 
             this.PopulateData();
             this.RefreshDGV();
+
+
         }
 
         private void FillData()
@@ -328,6 +355,7 @@ namespace OOP2.HRMS.WF
             SelectedData.JoiningDate = dateTimeJoinEMHRD.Value;
             SelectedData.HireDate = dateTimeHireEMHRD.Value;
             SelectedData.UserAccount.UserType = Int32.Parse(comboBoxUserTypeEMHRD.SelectedValue.ToString());
+            SelectedData.UserAccount.Password= new Random().Next(1000, 9999).ToString();
 
 
         }
