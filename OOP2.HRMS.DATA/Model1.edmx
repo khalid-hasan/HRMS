@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttnID" />
+          </Key>
+          <Property Name="AttnID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="DesigID" />
+          </Key>
+          <Property Name="DesigID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DesigName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="HireDate" Type="date" Nullable="false" />
+          <Property Name="JoiningDate" Type="date" Nullable="false" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="50" />
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="DesigID" Type="int" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Nationality" Type="varchar" MaxLength="50" />
+          <Property Name="NID" Type="varchar" MaxLength="50" />
+          <Property Name="Religion" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="ImagePath" Type="text" />
+        </EntityType>
+        <EntityType Name="EmployeeSalary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="BasicSalary" Type="int" Nullable="false" />
+          <Property Name="HouseAllowance" Type="int" Nullable="false" />
+          <Property Name="Conveyance" Type="int" Nullable="false" />
+          <Property Name="ProvidentFund" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Medical" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LeaveForm">
+          <Key>
+            <PropertyRef Name="LeaveID" />
+          </Key>
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="LeaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Period" Type="varchar" MaxLength="50" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="NoOfDays" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payroll">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Month" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payslip">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="PayrollID" Type="int" Nullable="false" />
+          <Property Name="BasicSalary" Type="int" Nullable="false" />
+          <Property Name="HouseAllowance" Type="int" Nullable="false" />
+          <Property Name="Medical" Type="int" Nullable="false" />
+          <Property Name="Conveyance" Type="int" Nullable="false" />
+          <Property Name="Addition" Type="int" Nullable="false" />
+          <Property Name="Deduction" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="UserType" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="Attendance_EmployeeInfo_EmpID_fk">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeInfo_Department_DeptID_fk">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="EmployeeInfo">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeInfo_Designation_DesigID_fk">
+          <End Role="Designation" Type="Self.Designation" Multiplicity="1" />
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designation">
+              <PropertyRef Name="DesigID" />
+            </Principal>
+            <Dependent Role="EmployeeInfo">
+              <PropertyRef Name="DesigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeSalary_EmployeeInfo_EmpID_fk">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+          <End Role="EmployeeSalary" Type="Self.EmployeeSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="EmployeeSalary">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LeaveForm_EmployeeInfo_EmpID_fk">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+          <End Role="LeaveForm" Type="Self.LeaveForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="LeaveForm">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Payslip_EmpInfo_EmpID_fk">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+          <End Role="Payslip" Type="Self.Payslip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="Payslip">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Payslip_PayrollID_ID_fk">
+          <End Role="Payroll" Type="Self.Payroll" Multiplicity="1" />
+          <End Role="Payslip" Type="Self.Payslip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payroll">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payslip">
+              <PropertyRef Name="PayrollID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserAccount_EmployeeInfo_EmpID_fk">
+          <End Role="EmployeeInfo" Type="Self.EmployeeInfo" Multiplicity="1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HRMSModelStoreContainer">
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designation" EntityType="Self.Designation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeInfo" EntityType="Self.EmployeeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeSalary" EntityType="Self.EmployeeSalary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeaveForm" EntityType="Self.LeaveForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payroll" EntityType="Self.Payroll" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payslip" EntityType="Self.Payslip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Attendance_EmployeeInfo_EmpID_fk" Association="Self.Attendance_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeInfo_Department_DeptID_fk" Association="Self.EmployeeInfo_Department_DeptID_fk">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeInfo_Designation_DesigID_fk" Association="Self.EmployeeInfo_Designation_DesigID_fk">
+            <End Role="Designation" EntitySet="Designation" />
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeSalary_EmployeeInfo_EmpID_fk" Association="Self.EmployeeSalary_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="EmployeeSalary" EntitySet="EmployeeSalary" />
+          </AssociationSet>
+          <AssociationSet Name="LeaveForm_EmployeeInfo_EmpID_fk" Association="Self.LeaveForm_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="LeaveForm" EntitySet="LeaveForm" />
+          </AssociationSet>
+          <AssociationSet Name="Payslip_EmpInfo_EmpID_fk" Association="Self.Payslip_EmpInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="Payslip" EntitySet="Payslip" />
+          </AssociationSet>
+          <AssociationSet Name="Payslip_PayrollID_ID_fk" Association="Self.Payslip_PayrollID_ID_fk">
+            <End Role="Payroll" EntitySet="Payroll" />
+            <End Role="Payslip" EntitySet="Payslip" />
+          </AssociationSet>
+          <AssociationSet Name="UserAccount_EmployeeInfo_EmpID_fk" Association="Self.UserAccount_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfo" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HRMSContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attendances" EntityType="HRMSModel.Attendance" />
+          <EntitySet Name="Departments" EntityType="HRMSModel.Department" />
+          <EntitySet Name="Designations" EntityType="HRMSModel.Designation" />
+          <EntitySet Name="EmployeeInfoes" EntityType="HRMSModel.EmployeeInfo" />
+          <EntitySet Name="EmployeeSalaries" EntityType="HRMSModel.EmployeeSalary" />
+          <EntitySet Name="LeaveForms" EntityType="HRMSModel.LeaveForm" />
+          <EntitySet Name="Payrolls" EntityType="HRMSModel.Payroll" />
+          <EntitySet Name="Payslips" EntityType="HRMSModel.Payslip" />
+          <EntitySet Name="UserAccounts" EntityType="HRMSModel.UserAccount" />
+          <AssociationSet Name="Attendance_EmployeeInfo_EmpID_fk" Association="HRMSModel.Attendance_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeInfo_Department_DeptID_fk" Association="HRMSModel.EmployeeInfo_Department_DeptID_fk">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeInfo_Designation_DesigID_fk" Association="HRMSModel.EmployeeInfo_Designation_DesigID_fk">
+            <End Role="Designation" EntitySet="Designations" />
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeSalary_EmployeeInfo_EmpID_fk" Association="HRMSModel.EmployeeSalary_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="EmployeeSalary" EntitySet="EmployeeSalaries" />
+          </AssociationSet>
+          <AssociationSet Name="LeaveForm_EmployeeInfo_EmpID_fk" Association="HRMSModel.LeaveForm_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="LeaveForm" EntitySet="LeaveForms" />
+          </AssociationSet>
+          <AssociationSet Name="Payslip_EmpInfo_EmpID_fk" Association="HRMSModel.Payslip_EmpInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="Payslip" EntitySet="Payslips" />
+          </AssociationSet>
+          <AssociationSet Name="UserAccount_EmployeeInfo_EmpID_fk" Association="HRMSModel.UserAccount_EmployeeInfo_EmpID_fk">
+            <End Role="EmployeeInfo" EntitySet="EmployeeInfoes" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="Payslip_PayrollID_ID_fk" Association="HRMSModel.Payslip_PayrollID_ID_fk">
+            <End Role="Payroll" EntitySet="Payrolls" />
+            <End Role="Payslip" EntitySet="Payslips" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttnID" />
+          </Key>
+          <Property Name="AttnID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="HRMSModel.Attendance_EmployeeInfo_EmpID_fk" FromRole="Attendance" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmployeeInfoes" Relationship="HRMSModel.EmployeeInfo_Department_DeptID_fk" FromRole="Department" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="DesigID" />
+          </Key>
+          <Property Name="DesigID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DesigName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EmployeeInfoes" Relationship="HRMSModel.EmployeeInfo_Designation_DesigID_fk" FromRole="Designation" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="EmployeeInfo">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="JoiningDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="DesigID" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Attendances" Relationship="HRMSModel.Attendance_EmployeeInfo_EmpID_fk" FromRole="EmployeeInfo" ToRole="Attendance" />
+          <NavigationProperty Name="Department" Relationship="HRMSModel.EmployeeInfo_Department_DeptID_fk" FromRole="EmployeeInfo" ToRole="Department" />
+          <NavigationProperty Name="Designation" Relationship="HRMSModel.EmployeeInfo_Designation_DesigID_fk" FromRole="EmployeeInfo" ToRole="Designation" />
+          <NavigationProperty Name="EmployeeSalaries" Relationship="HRMSModel.EmployeeSalary_EmployeeInfo_EmpID_fk" FromRole="EmployeeInfo" ToRole="EmployeeSalary" />
+          <NavigationProperty Name="LeaveForms" Relationship="HRMSModel.LeaveForm_EmployeeInfo_EmpID_fk" FromRole="EmployeeInfo" ToRole="LeaveForm" />
+          <NavigationProperty Name="Payslips" Relationship="HRMSModel.Payslip_EmpInfo_EmpID_fk" FromRole="EmployeeInfo" ToRole="Payslip" />
+          <NavigationProperty Name="UserAccount" Relationship="HRMSModel.UserAccount_EmployeeInfo_EmpID_fk" FromRole="EmployeeInfo" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="EmployeeSalary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="BasicSalary" Type="Int32" Nullable="false" />
+          <Property Name="HouseAllowance" Type="Int32" Nullable="false" />
+          <Property Name="Conveyance" Type="Int32" Nullable="false" />
+          <Property Name="ProvidentFund" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Medical" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="HRMSModel.EmployeeSalary_EmployeeInfo_EmpID_fk" FromRole="EmployeeSalary" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="LeaveForm">
+          <Key>
+            <PropertyRef Name="LeaveID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="LeaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Period" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="NoOfDays" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="HRMSModel.LeaveForm_EmployeeInfo_EmpID_fk" FromRole="LeaveForm" ToRole="EmployeeInfo" />
+        </EntityType>
+        <EntityType Name="Payroll">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Month" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Payslips" Relationship="HRMSModel.Payslip_PayrollID_ID_fk" FromRole="Payroll" ToRole="Payslip" />
+        </EntityType>
+        <EntityType Name="Payslip">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="PayrollID" Type="Int32" Nullable="false" />
+          <Property Name="BasicSalary" Type="Int32" Nullable="false" />
+          <Property Name="HouseAllowance" Type="Int32" Nullable="false" />
+          <Property Name="Medical" Type="Int32" Nullable="false" />
+          <Property Name="Conveyance" Type="Int32" Nullable="false" />
+          <Property Name="Addition" Type="Int32" Nullable="false" />
+          <Property Name="Deduction" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="HRMSModel.Payslip_EmpInfo_EmpID_fk" FromRole="Payslip" ToRole="EmployeeInfo" />
+          <NavigationProperty Name="Payroll" Relationship="HRMSModel.Payslip_PayrollID_ID_fk" FromRole="Payslip" ToRole="Payroll" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmployeeInfo" Relationship="HRMSModel.UserAccount_EmployeeInfo_EmpID_fk" FromRole="UserAccount" ToRole="EmployeeInfo" />
+        </EntityType>
+        <Association Name="Attendance_EmployeeInfo_EmpID_fk">
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="1" />
+          <End Type="HRMSModel.Attendance" Role="Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeInfo_Department_DeptID_fk">
+          <End Type="HRMSModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="EmployeeInfo">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeInfo_Designation_DesigID_fk">
+          <End Type="HRMSModel.Designation" Role="Designation" Multiplicity="1" />
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designation">
+              <PropertyRef Name="DesigID" />
+            </Principal>
+            <Dependent Role="EmployeeInfo">
+              <PropertyRef Name="DesigID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeSalary_EmployeeInfo_EmpID_fk">
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="1" />
+          <End Type="HRMSModel.EmployeeSalary" Role="EmployeeSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="EmployeeSalary">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LeaveForm_EmployeeInfo_EmpID_fk">
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="1" />
+          <End Type="HRMSModel.LeaveForm" Role="LeaveForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="LeaveForm">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Payslip_EmpInfo_EmpID_fk">
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="1" />
+          <End Type="HRMSModel.Payslip" Role="Payslip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="Payslip">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserAccount_EmployeeInfo_EmpID_fk">
+          <End Type="HRMSModel.EmployeeInfo" Role="EmployeeInfo" Multiplicity="1" />
+          <End Type="HRMSModel.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeInfo">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Payslip_PayrollID_ID_fk">
+          <End Type="HRMSModel.Payroll" Role="Payroll" Multiplicity="1" />
+          <End Type="HRMSModel.Payslip" Role="Payslip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payroll">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payslip">
+              <PropertyRef Name="PayrollID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSContext">
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="HRMSModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="AttnID" ColumnName="AttnID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="HRMSModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designations">
+            <EntityTypeMapping TypeName="HRMSModel.Designation">
+              <MappingFragment StoreEntitySet="Designation">
+                <ScalarProperty Name="DesigName" ColumnName="DesigName" />
+                <ScalarProperty Name="DesigID" ColumnName="DesigID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeInfoes">
+            <EntityTypeMapping TypeName="HRMSModel.EmployeeInfo">
+              <MappingFragment StoreEntitySet="EmployeeInfo">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="NID" ColumnName="NID" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DesigID" ColumnName="DesigID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeSalaries">
+            <EntityTypeMapping TypeName="HRMSModel.EmployeeSalary">
+              <MappingFragment StoreEntitySet="EmployeeSalary">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Medical" ColumnName="Medical" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProvidentFund" ColumnName="ProvidentFund" />
+                <ScalarProperty Name="Conveyance" ColumnName="Conveyance" />
+                <ScalarProperty Name="HouseAllowance" ColumnName="HouseAllowance" />
+                <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveForms">
+            <EntityTypeMapping TypeName="HRMSModel.LeaveForm">
+              <MappingFragment StoreEntitySet="LeaveForm">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="Period" ColumnName="Period" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LeaveID" ColumnName="LeaveID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payrolls">
+            <EntityTypeMapping TypeName="HRMSModel.Payroll">
+              <MappingFragment StoreEntitySet="Payroll">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payslips">
+            <EntityTypeMapping TypeName="HRMSModel.Payslip">
+              <MappingFragment StoreEntitySet="Payslip">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Deduction" ColumnName="Deduction" />
+                <ScalarProperty Name="Addition" ColumnName="Addition" />
+                <ScalarProperty Name="Conveyance" ColumnName="Conveyance" />
+                <ScalarProperty Name="Medical" ColumnName="Medical" />
+                <ScalarProperty Name="HouseAllowance" ColumnName="HouseAllowance" />
+                <ScalarProperty Name="BasicSalary" ColumnName="BasicSalary" />
+                <ScalarProperty Name="PayrollID" ColumnName="PayrollID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="HRMSModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

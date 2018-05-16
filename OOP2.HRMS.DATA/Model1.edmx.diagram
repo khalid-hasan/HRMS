@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="21c59c21603b4934ba1e7fb60f1b3bec" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="HRMSModel.Attendance" Width="1.5" PointX="5.25" PointY="17.75" />
+        <EntityTypeShape EntityType="HRMSModel.Department" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HRMSModel.Designation" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HRMSModel.EmployeeInfo" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="HRMSModel.EmployeeSalary" Width="1.5" PointX="5.25" PointY="14" />
+        <EntityTypeShape EntityType="HRMSModel.LeaveForm" Width="1.5" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="HRMSModel.Payroll" Width="1.5" PointX="6" PointY="7.5" />
+        <EntityTypeShape EntityType="HRMSModel.Payslip" Width="1.5" PointX="8.25" PointY="7.75" />
+        <EntityTypeShape EntityType="HRMSModel.UserAccount" Width="1.5" PointX="5.25" PointY="3.75" />
+        <AssociationConnector Association="HRMSModel.Attendance_EmployeeInfo_EmpID_fk" />
+        <AssociationConnector Association="HRMSModel.EmployeeInfo_Department_DeptID_fk" />
+        <AssociationConnector Association="HRMSModel.EmployeeInfo_Designation_DesigID_fk" />
+        <AssociationConnector Association="HRMSModel.EmployeeSalary_EmployeeInfo_EmpID_fk" />
+        <AssociationConnector Association="HRMSModel.LeaveForm_EmployeeInfo_EmpID_fk" />
+        <AssociationConnector Association="HRMSModel.Payslip_EmpInfo_EmpID_fk" />
+        <AssociationConnector Association="HRMSModel.UserAccount_EmployeeInfo_EmpID_fk" />
+        <AssociationConnector Association="HRMSModel.Payslip_PayrollID_ID_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

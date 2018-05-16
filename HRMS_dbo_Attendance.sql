@@ -1,0 +1,12 @@
+INSERT INTO HRMS.dbo.Department (DeptID, DeptName) VALUES (1, 'Sales');
+INSERT INTO HRMS.dbo.Department (DeptID, DeptName) VALUES (2, 'Marketing');
+INSERT INTO HRMS.dbo.Department (DeptID, DeptName) VALUES (3, 'Accounts');
+INSERT INTO HRMS.dbo.Department (DeptID, DeptName) VALUES (4, 'HR');
+INSERT INTO HRMS.dbo.Designation (DesigID, DesigName) VALUES (1, 'Director');
+INSERT INTO HRMS.dbo.Designation (DesigID, DesigName) VALUES (2, 'Executive');
+INSERT INTO HRMS.dbo.EmployeeInfo (EmpID, EmpName, Email, DOB, HireDate, JoiningDate, BloodGroup, DeptID, DesigID, Address, Gender, MaritalStatus, Nationality, NID, Religion, Contact, Status, ImagePath, Salary) VALUES (3, 'Khalid Hasan', 'khalid@gmail.com', '1995-01-01', '2017-05-25', '2017-06-01', 'B+', 4, 1, 'Adabor', 'Male', 'Unmarried', 'Bangladeshi', 45623489651235487, 'Islam', '01820570771', 'Active', null, 100000);
+INSERT INTO HRMS.dbo.EmployeeInfo (EmpID, EmpName, Email, DOB, HireDate, JoiningDate, BloodGroup, DeptID, DesigID, Address, Gender, MaritalStatus, Nationality, NID, Religion, Contact, Status, ImagePath, Salary) VALUES (4, 'T.N Jenia', 'tnj@yahoo.com', '1980-12-12', '2018-01-28', '2018-02-01', 'AB+', 1, 2, 'Mirpur', 'Female', 'Married', 'Bangladeshi', 5490634464964854, 'Islam', '01784290525', 'Active', null, 50000);
+INSERT INTO HRMS.dbo.SalaryManager (DeptID, DesigID, Salary) VALUES (1, 2, 50000);
+INSERT INTO HRMS.dbo.SalaryManager (DeptID, DesigID, Salary) VALUES (4, 1, 100000);
+INSERT INTO HRMS.dbo.UserAccount (UserID, Password, UserType) VALUES (3, '123456', 1);
+INSERT INTO HRMS.dbo.UserAccount (UserID, Password, UserType) VALUES (4, '123456', 2);

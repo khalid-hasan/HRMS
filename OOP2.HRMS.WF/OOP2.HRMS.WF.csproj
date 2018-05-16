@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFA8EA5F-33EF-4A9B-99CE-7246EA893E9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OOP2.HRMS.WF</RootNamespace>
+    <AssemblyName>OOP2.HRMS.WF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=12.0.18.416, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=12.0.18.416, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttendanceHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceHRD.Designer.cs">
+      <DependentUpon>AttendanceHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceHRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceHRE.Designer.cs">
+      <DependentUpon>AttendanceHRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmentHRD.Designer.cs">
+      <DependentUpon>DepartmentHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignationHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignationHRD.Designer.cs">
+      <DependentUpon>DesignationHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeListESHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeListESHRD.Designer.cs">
+      <DependentUpon>EmployeeListESHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeManagerHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagerHRD.Designer.cs">
+      <DependentUpon>EmployeeManagerHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSalaryHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSalaryHRD.Designer.cs">
+      <DependentUpon>EmployeeSalaryHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeHRD.Designer.cs">
+      <DependentUpon>HomeHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeHRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeHRE.Designer.cs">
+      <DependentUpon>HomeHRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveHRD.Designer.cs">
+      <DependentUpon>LeaveHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveHRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveHRE.Designer.cs">
+      <DependentUpon>LeaveHRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginManager.Designer.cs">
+      <DependentUpon>LoginManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollHRD.Designer.cs">
+      <DependentUpon>PayrollHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayslipHRD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayslipHRD.Designer.cs">
+      <DependentUpon>PayslipHRD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayslipHRE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayslipHRE.Designer.cs">
+      <DependentUpon>PayslipHRE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayslipManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayslipManager.Designer.cs">
+      <DependentUpon>PayslipManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AttendanceHRD.resx">
+      <DependentUpon>AttendanceHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceHRE.resx">
+      <DependentUpon>AttendanceHRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentHRD.resx">
+      <DependentUpon>DepartmentHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignationHRD.resx">
+      <DependentUpon>DesignationHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeListESHRD.resx">
+      <DependentUpon>EmployeeListESHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeManagerHRD.resx">
+      <DependentUpon>EmployeeManagerHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSalaryHRD.resx">
+      <DependentUpon>EmployeeSalaryHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeHRD.resx">
+      <DependentUpon>HomeHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeHRE.resx">
+      <DependentUpon>HomeHRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveHRD.resx">
+      <DependentUpon>LeaveHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveHRE.resx">
+      <DependentUpon>LeaveHRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginManager.resx">
+      <DependentUpon>LoginManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollHRD.resx">
+      <DependentUpon>PayrollHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayslipHRD.resx">
+      <DependentUpon>PayslipHRD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayslipHRE.resx">
+      <DependentUpon>PayslipHRE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayslipManager.resx">
+      <DependentUpon>PayslipManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="HRMSDataSet.xsc">
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HRMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRMSDataSet.xss">
+      <DependentUpon>HRMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\racing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line-graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OOP2.HRMS.DATA\OOP2.HRMS.DATA.csproj">
+      <Project>{DE8C341E-D70F-48C7-A95E-C0A221EFB327}</Project>
+      <Name>OOP2.HRMS.DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOP2.HRMS.FRAMEWORK\OOP2.HRMS.FRAMEWORK.csproj">
+      <Project>{29de7ed2-10a7-4635-bfae-5394a7d663c9}</Project>
+      <Name>OOP2.HRMS.FRAMEWORK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOP2.HRMS.Reporting\OOP2.HRMS.Reporting.csproj">
+      <Project>{3B8BA128-AC9F-4EE8-82B7-570666BD0080}</Project>
+      <Name>OOP2.HRMS.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OOP2.HRMS.REPO\OOP2.HRMS.REPO.csproj">
+      <Project>{5c0c0702-f1ee-4673-b3a8-2c94ad0b20a4}</Project>
+      <Name>OOP2.HRMS.REPO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hierarchy %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hierarchy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
