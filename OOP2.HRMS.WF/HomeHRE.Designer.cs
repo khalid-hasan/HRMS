@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeHRE));
             this.txtboxPasswordHomeHRE = new MetroFramework.Controls.MetroTextBox();
             this.txtboxContactHomeHRE = new MetroFramework.Controls.MetroTextBox();
             this.txtboxEmailHomeHRE = new MetroFramework.Controls.MetroTextBox();
@@ -625,7 +626,7 @@
             // 
             this.dateTimeHomeHRE.Enabled = false;
             this.dateTimeHomeHRE.Location = new System.Drawing.Point(157, 74);
-            this.dateTimeHomeHRE.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateTimeHomeHRE.MinimumSize = new System.Drawing.Size(4, 30);
             this.dateTimeHomeHRE.Name = "dateTimeHomeHRE";
             this.dateTimeHomeHRE.Size = new System.Drawing.Size(184, 30);
             this.dateTimeHomeHRE.TabIndex = 85;
@@ -763,6 +764,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 701);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomeHRE";
             this.Load += new System.EventHandler(this.HomeHREmployee_Load);
             this.metroTabControl1.ResumeLayout(false);

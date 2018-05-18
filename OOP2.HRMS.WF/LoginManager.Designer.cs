@@ -189,6 +189,7 @@
             this.Controls.Add(this.txtboxUsername);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginManager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

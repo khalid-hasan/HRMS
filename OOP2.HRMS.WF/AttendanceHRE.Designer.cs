@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceHRE));
             this.txtEmpID = new MetroFramework.Controls.MetroTextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.ClientSize = new System.Drawing.Size(597, 391);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.txtEmpID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AttendanceHRE";
             this.Text = "Attendance";

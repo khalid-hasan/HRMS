@@ -30,10 +30,20 @@ namespace OOP2.HRMS.WF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeHRD));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.tileLeaveHRD = new MetroFramework.Controls.MetroTile();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.tileLogoutHRD = new MetroFramework.Controls.MetroTile();
+            this.tilePayslipHRD = new MetroFramework.Controls.MetroTile();
+            this.tilePayrollHRD = new MetroFramework.Controls.MetroTile();
+            this.tileAttendanceHRD = new MetroFramework.Controls.MetroTile();
+            this.tileEmployeeManagerHRD = new MetroFramework.Controls.MetroTile();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dateTimeHomeHRD = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -64,18 +74,9 @@ namespace OOP2.HRMS.WF
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBoxHomeHRD = new System.Windows.Forms.PictureBox();
             this.lblWelcome = new MetroFramework.Controls.MetroLabel();
             this.dateTimeDOBHomeHRD = new MetroFramework.Controls.MetroDateTime();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.tileLeaveHRD = new MetroFramework.Controls.MetroTile();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.tileLogoutHRD = new MetroFramework.Controls.MetroTile();
-            this.tilePayslipHRD = new MetroFramework.Controls.MetroTile();
-            this.tilePayrollHRD = new MetroFramework.Controls.MetroTile();
-            this.tileAttendanceHRD = new MetroFramework.Controls.MetroTile();
-            this.tileEmployeeManagerHRD = new MetroFramework.Controls.MetroTile();
-            this.pictureBoxHomeHRD = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -147,6 +148,158 @@ namespace OOP2.HRMS.WF
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(210, 355);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(164, 87);
+            this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile3.TabIndex = 19;
+            this.metroTile3.Text = "Designation";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile3.TileImage = global::OOP2.HRMS.WF.Properties.Resources.user;
+            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile3.UseSelectable = true;
+            this.metroTile3.UseTileImage = true;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(210, 262);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(164, 95);
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTile2.TabIndex = 18;
+            this.metroTile2.Text = "Department";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile2.TileImage = global::OOP2.HRMS.WF.Properties.Resources.hierarchy;
+            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile2.UseSelectable = true;
+            this.metroTile2.UseTileImage = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            // 
+            // tileLeaveHRD
+            // 
+            this.tileLeaveHRD.ActiveControl = null;
+            this.tileLeaveHRD.Location = new System.Drawing.Point(432, 57);
+            this.tileLeaveHRD.Name = "tileLeaveHRD";
+            this.tileLeaveHRD.Size = new System.Drawing.Size(165, 168);
+            this.tileLeaveHRD.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.tileLeaveHRD.TabIndex = 11;
+            this.tileLeaveHRD.Text = "Leave ";
+            this.tileLeaveHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tileLeaveHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.employee;
+            this.tileLeaveHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileLeaveHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tileLeaveHRD.UseSelectable = true;
+            this.tileLeaveHRD.UseTileImage = true;
+            this.tileLeaveHRD.Click += new System.EventHandler(this.tileLeaveHRD_Click);
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(380, 262);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(203, 180);
+            this.metroTile1.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroTile1.TabIndex = 17;
+            this.metroTile1.Text = "Salary Manager";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile1.TileImage = global::OOP2.HRMS.WF.Properties.Resources.banker;
+            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
+            // tileLogoutHRD
+            // 
+            this.tileLogoutHRD.ActiveControl = null;
+            this.tileLogoutHRD.Location = new System.Drawing.Point(589, 262);
+            this.tileLogoutHRD.Name = "tileLogoutHRD";
+            this.tileLogoutHRD.Size = new System.Drawing.Size(159, 180);
+            this.tileLogoutHRD.Style = MetroFramework.MetroColorStyle.Silver;
+            this.tileLogoutHRD.TabIndex = 16;
+            this.tileLogoutHRD.Text = "LOGOUT";
+            this.tileLogoutHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tileLogoutHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.logout;
+            this.tileLogoutHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileLogoutHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tileLogoutHRD.UseSelectable = true;
+            this.tileLogoutHRD.UseTileImage = true;
+            this.tileLogoutHRD.Click += new System.EventHandler(this.tileLogoutHRD_Click);
+            // 
+            // tilePayslipHRD
+            // 
+            this.tilePayslipHRD.ActiveControl = null;
+            this.tilePayslipHRD.Location = new System.Drawing.Point(46, 262);
+            this.tilePayslipHRD.Name = "tilePayslipHRD";
+            this.tilePayslipHRD.Size = new System.Drawing.Size(158, 180);
+            this.tilePayslipHRD.Style = MetroFramework.MetroColorStyle.Orange;
+            this.tilePayslipHRD.TabIndex = 15;
+            this.tilePayslipHRD.Text = "Payslip";
+            this.tilePayslipHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tilePayslipHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.contract;
+            this.tilePayslipHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tilePayslipHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tilePayslipHRD.UseSelectable = true;
+            this.tilePayslipHRD.UseTileImage = true;
+            this.tilePayslipHRD.Click += new System.EventHandler(this.tilePayslipHRD_Click);
+            // 
+            // tilePayrollHRD
+            // 
+            this.tilePayrollHRD.ActiveControl = null;
+            this.tilePayrollHRD.Location = new System.Drawing.Point(603, 57);
+            this.tilePayrollHRD.Name = "tilePayrollHRD";
+            this.tilePayrollHRD.Size = new System.Drawing.Size(145, 168);
+            this.tilePayrollHRD.Style = MetroFramework.MetroColorStyle.Red;
+            this.tilePayrollHRD.TabIndex = 14;
+            this.tilePayrollHRD.Text = "Payroll";
+            this.tilePayrollHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tilePayrollHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.dollar_symbol;
+            this.tilePayrollHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tilePayrollHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tilePayrollHRD.UseSelectable = true;
+            this.tilePayrollHRD.UseTileImage = true;
+            this.tilePayrollHRD.Click += new System.EventHandler(this.tilePayrollHRD_Click);
+            // 
+            // tileAttendanceHRD
+            // 
+            this.tileAttendanceHRD.ActiveControl = null;
+            this.tileAttendanceHRD.Location = new System.Drawing.Point(249, 57);
+            this.tileAttendanceHRD.Name = "tileAttendanceHRD";
+            this.tileAttendanceHRD.Size = new System.Drawing.Size(177, 168);
+            this.tileAttendanceHRD.TabIndex = 12;
+            this.tileAttendanceHRD.Text = "Attendance";
+            this.tileAttendanceHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tileAttendanceHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.racing;
+            this.tileAttendanceHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileAttendanceHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tileAttendanceHRD.UseSelectable = true;
+            this.tileAttendanceHRD.UseTileImage = true;
+            this.tileAttendanceHRD.Click += new System.EventHandler(this.tileAttendanceHRD_Click);
+            // 
+            // tileEmployeeManagerHRD
+            // 
+            this.tileEmployeeManagerHRD.ActiveControl = null;
+            this.tileEmployeeManagerHRD.Location = new System.Drawing.Point(46, 57);
+            this.tileEmployeeManagerHRD.Name = "tileEmployeeManagerHRD";
+            this.tileEmployeeManagerHRD.Size = new System.Drawing.Size(197, 168);
+            this.tileEmployeeManagerHRD.Style = MetroFramework.MetroColorStyle.Teal;
+            this.tileEmployeeManagerHRD.TabIndex = 10;
+            this.tileEmployeeManagerHRD.Text = "Employee Manager";
+            this.tileEmployeeManagerHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.tileEmployeeManagerHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.boss;
+            this.tileEmployeeManagerHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileEmployeeManagerHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.tileEmployeeManagerHRD.UseSelectable = true;
+            this.tileEmployeeManagerHRD.UseTileImage = true;
+            this.tileEmployeeManagerHRD.Click += new System.EventHandler(this.tileEmployeeManagerHRD_Click);
             // 
             // metroTabPage2
             // 
@@ -685,6 +838,15 @@ namespace OOP2.HRMS.WF
             this.metroLabel7.TabIndex = 2;
             this.metroLabel7.Text = "Name";
             // 
+            // pictureBoxHomeHRD
+            // 
+            this.pictureBoxHomeHRD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxHomeHRD.Location = new System.Drawing.Point(526, 167);
+            this.pictureBoxHomeHRD.Name = "pictureBoxHomeHRD";
+            this.pictureBoxHomeHRD.Size = new System.Drawing.Size(200, 200);
+            this.pictureBoxHomeHRD.TabIndex = 30;
+            this.pictureBoxHomeHRD.TabStop = false;
+            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
@@ -702,173 +864,13 @@ namespace OOP2.HRMS.WF
             this.dateTimeDOBHomeHRD.Size = new System.Drawing.Size(200, 22);
             this.dateTimeDOBHomeHRD.TabIndex = 0;
             // 
-            // metroTile3
-            // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(210, 355);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(164, 87);
-            this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTile3.TabIndex = 19;
-            this.metroTile3.Text = "Designation";
-            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroTile3.TileImage = global::OOP2.HRMS.WF.Properties.Resources.user;
-            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(210, 262);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(164, 95);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTile2.TabIndex = 18;
-            this.metroTile2.Text = "Department";
-            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroTile2.TileImage = global::OOP2.HRMS.WF.Properties.Resources.hierarchy;
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
-            // 
-            // tileLeaveHRD
-            // 
-            this.tileLeaveHRD.ActiveControl = null;
-            this.tileLeaveHRD.Location = new System.Drawing.Point(432, 57);
-            this.tileLeaveHRD.Name = "tileLeaveHRD";
-            this.tileLeaveHRD.Size = new System.Drawing.Size(165, 168);
-            this.tileLeaveHRD.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.tileLeaveHRD.TabIndex = 11;
-            this.tileLeaveHRD.Text = "Leave ";
-            this.tileLeaveHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tileLeaveHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.employee;
-            this.tileLeaveHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileLeaveHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tileLeaveHRD.UseSelectable = true;
-            this.tileLeaveHRD.UseTileImage = true;
-            this.tileLeaveHRD.Click += new System.EventHandler(this.tileLeaveHRD_Click);
-            // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(380, 262);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(203, 180);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Purple;
-            this.metroTile1.TabIndex = 17;
-            this.metroTile1.Text = "Salary Manager";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroTile1.TileImage = global::OOP2.HRMS.WF.Properties.Resources.banker;
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
-            // tileLogoutHRD
-            // 
-            this.tileLogoutHRD.ActiveControl = null;
-            this.tileLogoutHRD.Location = new System.Drawing.Point(589, 262);
-            this.tileLogoutHRD.Name = "tileLogoutHRD";
-            this.tileLogoutHRD.Size = new System.Drawing.Size(159, 180);
-            this.tileLogoutHRD.Style = MetroFramework.MetroColorStyle.Silver;
-            this.tileLogoutHRD.TabIndex = 16;
-            this.tileLogoutHRD.Text = "LOGOUT";
-            this.tileLogoutHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tileLogoutHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.logout;
-            this.tileLogoutHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileLogoutHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tileLogoutHRD.UseSelectable = true;
-            this.tileLogoutHRD.UseTileImage = true;
-            this.tileLogoutHRD.Click += new System.EventHandler(this.tileLogoutHRD_Click);
-            // 
-            // tilePayslipHRD
-            // 
-            this.tilePayslipHRD.ActiveControl = null;
-            this.tilePayslipHRD.Location = new System.Drawing.Point(46, 262);
-            this.tilePayslipHRD.Name = "tilePayslipHRD";
-            this.tilePayslipHRD.Size = new System.Drawing.Size(158, 180);
-            this.tilePayslipHRD.Style = MetroFramework.MetroColorStyle.Orange;
-            this.tilePayslipHRD.TabIndex = 15;
-            this.tilePayslipHRD.Text = "Payslip";
-            this.tilePayslipHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tilePayslipHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.contract;
-            this.tilePayslipHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tilePayslipHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tilePayslipHRD.UseSelectable = true;
-            this.tilePayslipHRD.UseTileImage = true;
-            this.tilePayslipHRD.Click += new System.EventHandler(this.tilePayslipHRD_Click);
-            // 
-            // tilePayrollHRD
-            // 
-            this.tilePayrollHRD.ActiveControl = null;
-            this.tilePayrollHRD.Location = new System.Drawing.Point(603, 57);
-            this.tilePayrollHRD.Name = "tilePayrollHRD";
-            this.tilePayrollHRD.Size = new System.Drawing.Size(145, 168);
-            this.tilePayrollHRD.Style = MetroFramework.MetroColorStyle.Red;
-            this.tilePayrollHRD.TabIndex = 14;
-            this.tilePayrollHRD.Text = "Payroll";
-            this.tilePayrollHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tilePayrollHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.dollar_symbol;
-            this.tilePayrollHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tilePayrollHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tilePayrollHRD.UseSelectable = true;
-            this.tilePayrollHRD.UseTileImage = true;
-            this.tilePayrollHRD.Click += new System.EventHandler(this.tilePayrollHRD_Click);
-            // 
-            // tileAttendanceHRD
-            // 
-            this.tileAttendanceHRD.ActiveControl = null;
-            this.tileAttendanceHRD.Location = new System.Drawing.Point(249, 57);
-            this.tileAttendanceHRD.Name = "tileAttendanceHRD";
-            this.tileAttendanceHRD.Size = new System.Drawing.Size(177, 168);
-            this.tileAttendanceHRD.TabIndex = 12;
-            this.tileAttendanceHRD.Text = "Attendance";
-            this.tileAttendanceHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tileAttendanceHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.racing;
-            this.tileAttendanceHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileAttendanceHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tileAttendanceHRD.UseSelectable = true;
-            this.tileAttendanceHRD.UseTileImage = true;
-            this.tileAttendanceHRD.Click += new System.EventHandler(this.tileAttendanceHRD_Click);
-            // 
-            // tileEmployeeManagerHRD
-            // 
-            this.tileEmployeeManagerHRD.ActiveControl = null;
-            this.tileEmployeeManagerHRD.Location = new System.Drawing.Point(46, 57);
-            this.tileEmployeeManagerHRD.Name = "tileEmployeeManagerHRD";
-            this.tileEmployeeManagerHRD.Size = new System.Drawing.Size(197, 168);
-            this.tileEmployeeManagerHRD.Style = MetroFramework.MetroColorStyle.Teal;
-            this.tileEmployeeManagerHRD.TabIndex = 10;
-            this.tileEmployeeManagerHRD.Text = "Employee Manager";
-            this.tileEmployeeManagerHRD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.tileEmployeeManagerHRD.TileImage = global::OOP2.HRMS.WF.Properties.Resources.boss;
-            this.tileEmployeeManagerHRD.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tileEmployeeManagerHRD.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.tileEmployeeManagerHRD.UseSelectable = true;
-            this.tileEmployeeManagerHRD.UseTileImage = true;
-            this.tileEmployeeManagerHRD.Click += new System.EventHandler(this.tileEmployeeManagerHRD_Click);
-            // 
-            // pictureBoxHomeHRD
-            // 
-            this.pictureBoxHomeHRD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxHomeHRD.Location = new System.Drawing.Point(526, 167);
-            this.pictureBoxHomeHRD.Name = "pictureBoxHomeHRD";
-            this.pictureBoxHomeHRD.Size = new System.Drawing.Size(200, 200);
-            this.pictureBoxHomeHRD.TabIndex = 30;
-            this.pictureBoxHomeHRD.TabStop = false;
-            // 
             // HomeHRD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 701);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HomeHRD";
             this.Load += new System.EventHandler(this.HomeHRDirector_Load);

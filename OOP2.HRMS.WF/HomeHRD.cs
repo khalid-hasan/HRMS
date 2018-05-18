@@ -125,7 +125,7 @@ namespace OOP2.HRMS.WF
         private void tileLogoutHRD_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginManager lm= new LoginManager();
+            LoginManager lm= new LoginManager("");
             lm.Show();
         }
 

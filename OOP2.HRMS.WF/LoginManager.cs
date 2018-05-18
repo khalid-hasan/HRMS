@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
@@ -16,6 +17,18 @@ namespace OOP2.HRMS.WF
     public partial class LoginManager : MetroFramework.Forms.MetroForm
     {
         public LoginManager()
+        {
+            Thread t= new Thread(new ThreadStart(Loading));
+            t.Start();
+            InitializeComponent();
+            for (int i = 0; i < 500; i++)
+            {
+                Thread.Sleep(10);
+            }
+            t.Abort();
+        }
+
+        public LoginManager(string value)
         {
             InitializeComponent();
         }
@@ -30,6 +43,11 @@ namespace OOP2.HRMS.WF
             this.Login();
         }
 
+        private void Loading()
+        {
+            SplashScreen ss= new SplashScreen();
+            Application.Run(ss);
+        }
         private void Login()
         {
             HRMSContext context= new HRMSContext();
